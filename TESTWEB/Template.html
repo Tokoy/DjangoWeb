@@ -1,0 +1,145 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+	  <title>Template</title>
+	  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	  <link rel="stylesheet" href="https://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+	  <link type="text/css" rel="stylesheet" href="./css/main.css"> 
+	  <link type="text/css" rel="stylesheet" href="./css/font-awesome.css"> 
+	  <script src="./js/jquery.js"></script>
+	  <script src="https://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	  <script src="./js/angular.min.js"></script>
+	   <script src="./js/angular-route.js"></script>
+	   <script src="./js/ui-bootstrap-tpls-2.4.0.min.js"></script>
+	   <script src="./js/angular-touch.js"></script>
+	   <script src="./js/angular-animate.js"></script>
+	   <script src="./js/module.js"></script>
+	   <script src="./js/controller.js"></script>
+  </head>
+  <body ng-app="myApp">
+	<nav class="main-navigation navbar-fixed-top">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-12 navbar navbar-inverse navbar-swapper">
+				<div class="navbar-header">
+					<ul class="nav nav-pills">
+						<li class="active"><a href="#/">Home</a></li>
+						<li><a href="##">New</a></li>
+						<li class="dropdown">
+						<a href="##" class="dropdown-toggle" data-toggle="dropdown">Blog<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<!--二级菜单-->
+							<li><a href="##">Python</a></li>
+							<li><a href="##">Xamarin</a></li>
+						</ul>
+						</li>
+						<li><a href="##">Forum</a></li>
+						<!--禁用状态-->
+						<li class="disabled"><a href="##">feedback</a></li>
+					<ul class="menu nav nav-pills pull-right" style="top: 0px; right: 0px; position: absolute;">
+					  <li><a  class="login" href="#/login">login</a></li>
+					  <li><a  class="register" type="button">register</a></li>
+					</ul>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	</nav>
+	<section class="content-wrap">
+	<div class="container" ng-controller="myCtrl">
+		<div class="raw">
+			<div class="main-content col-md-8">
+				<div class="post" ng-repeat="data in datas">
+					<h3 class="post-header">{{data.Title}}</h3>
+					<div class="post-content">{{data.Content}}</div>
+					<div class="post-footer">{{data.Person}}</div>
+				</div>
+			</div>
+			<div class="sidebar col-md-4">
+                <!-- start widget -->
+				<!-- end widget -->	
+
+				<!-- start tag cloud widget -->
+				<div class="widget">
+					<h4 class="title">社区</h4>
+					<div class="content community">
+						<p>QQ：2303870038</p>
+						<p><a href="#" title="中文社区" target="_blank" onclick=""><i class="fa fa-comments"></i>Community</a></p>
+					</div>
+				</div>
+				<!-- end tag cloud widget -->	
+
+				<!-- start widget -->
+				<div class="widget">
+					<h4 class="title">下载</h4>
+					<div class="content download">
+						<a href="#" class="btn btn-default btn-block" ng-click="addpage()">Download</a>
+					</div>
+				</div>
+				<!-- end widget -->	
+
+				<div class="widget">
+					<h4 class="title">文档</h4>
+					<a href="#" class="btn btn-default btn-block" target="_blank">中文文档</a>
+					<a href="#" class="btn btn-default btn-block" target="_blank">文档1</a>
+					<a href="#" class="btn btn-default btn-block" target="_blank">文档2</a>
+					<a href="#" class="btn btn-default btn-block" target="_blank">文档3</a>
+					<a href="#" class="btn btn-default btn-block" target="_blank">文档4</a>
+				</div>
+
+				<!-- start tag cloud widget -->
+				<div class="widget">
+					<h4 class="title">标签云</h4>
+					<div class="content tag-cloud">
+						<a href="#">标签</a>
+						<a href="#">标签1</a>
+						<a href="#">标签2</a>
+						<a href="#">标签2</a>
+						<a href="#">标签3</a>
+						<a href="#">标签4</a>
+						<a href="#">标签5</a>
+						<a href="#">标签6</a>
+						<a href="#">标签7</a>
+						<a href="#">标签8</a>
+						<a href="#">标签9</a>
+						<a href="#">标签10</a>
+						<a href="#">标签11</a>
+						<a href="#">错误页</a>
+						<a href="#">标签12</a>
+						<a href="#">标签13</a>
+						<a href="#">标签14</a>
+						<a href="#">标签15</a>
+						<a href="">...</a>
+					</div>
+				</div>
+				<!-- end tag cloud widget -->	
+				<uib-accordion close-others="oneAtATime">
+					<div uib-accordion-group class="panel-default" is-open="status.open">
+					  <uib-accordion-heading>
+						Read Me! <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
+					  </uib-accordion-heading>
+					  This is just some content to illustrate fancy headings.
+					</div>
+				 </uib-accordion>
+				<!-- start widget -->
+				<!-- end widget -->	
+
+				<!-- start widget -->
+				<!-- end widget --> 
+			</div>
+		</div>
+	</div>
+	</section>
+	<footer class="main-footer">
+		<div class="container">
+            <div class="raw">
+			</div>
+		</div>
+	</footer>
+	<a style="display: block;" href="#" id="back-to-top"><i class="fa fa-angle-up"></i></a>
+	<!--弹出框-->
+	<div ng-include="'pages/login2.html'"></div>
+	<div ng-include="'pages/register.html'"></div>
+  </body>
+</html> 
