@@ -20,26 +20,11 @@ from hello import views
 from rest_framework import routers, serializers, viewsets
 from django.contrib.auth.models import User
 from hello.models import Person,Article
+from HelloDjango.serializers import ArticleViewSet,UserViewSet
+from rest_framework.urlpatterns import format_suffix_patterns
 
 # Serializers define the API representation.
-class UserSerializer(serializers.HyperlinkedModelSerializer):
-    class Meta:
-        model = Person
-        fields = ('name', 'email', 'password')
 
-class ArticleSerializer(serializers.HyperlinkedModelSerializer):
-    class Meta:
-        model = Article
-        fields = ('title', 'content', 'name')
-
-# ViewSets define the view behavior.
-class ArticleViewSet(viewsets.ModelViewSet):
-    queryset = Article.objects.all()
-    serializer_class = ArticleSerializer
-
-class UserViewSet(viewsets.ModelViewSet):
-    queryset = Person.objects.all()
-    serializer_class = UserSerializer
 
 # Routers provide an easy way of automatically determining the URL conf.
 router = routers.DefaultRouter()
@@ -47,11 +32,12 @@ router.register(r'context', ArticleViewSet)
 router.register(r'users', UserViewSet)
 
 urlpatterns = [
-    url('^hello/',views.hello),
-    url('^admin/',(admin.site.urls)),
-    url('^register/$',views.register , name='register'),
-    url('^login/$',views.login , name='login'),
-    url('~test/$',views.readnews),
+    url('^index/$',views.index),
+    url('^register/$',views.User_list , name='register'),
+    url('^login/$',views.User_list , name='login'),
+    # url('^login/(?P<pk>[0-9]+)$',views.User_detail , name='login'),
     url(r'^', include(router.urls)),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    url('^admin/', (admin.site.urls)),
 ]
+# urlpatterns = format_suffix_patterns(urlpatterns)

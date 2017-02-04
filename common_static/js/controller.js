@@ -63,27 +63,34 @@ app.controller('myCtrl',function($scope,$http) {
                     'email':$scope.user.email
                     }
         $http({
-        url:'/users/',
+        url:'/register/',
         method:'POST',
         data:datas,
         dataType:'json'
         }).success(function(response){
 
 		}).error(function(response){
-		alert(response)
+		    alert(response)
 		})
     };
 
-	  $scope.items = ['Item 1', 'Item 2', 'Item 3'];
-	  $scope.addpage = function() {
-		  var Title='addtitle'
-		  var Content='this is add content'
-		  var Person='somebody'
-		  var Time = '2017/1'
-		  var newdata={Title,Content,Person,Time}
-		  $scope.datas.unshift(newdata)
-		  
-	  };
+    $scope.login=function(){
+        var datas={
+                    'password':$scope.user.password,
+                    'email':$scope.user.email
+                    }
+        $http({
+        url:'/login/',
+        method:'GET',
+        Params:datas,
+        dataType:'json'
+        }).success(function(response){
+            alert(response)
+		}).error(function(response){
+		    alert(response)
+		})
+    };
+
 	  $scope.addItem = function() {
 		var newItemNo = $scope.items.length + 1;
 		$scope.items.push('Item ' + newItemNo);
@@ -95,6 +102,7 @@ app.controller('myCtrl',function($scope,$http) {
 		isFirstDisabled: false
 	  };
 	});
+
 $(function(){
         $(".register").click(function(){
             $("#registermodal").modal("toggle");

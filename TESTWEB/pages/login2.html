@@ -1,4 +1,4 @@
-<div class="modal fade" id="loginmodal">
+<div class="modal fade" id="loginmodal" ng-app="myApp" ng-controller="myCtrl">
 <div class="row">
     <div class="center-form panel">
       <div class="panel-body">
@@ -6,7 +6,7 @@
 			<span aria-hidden="true">&times;</span><span class="sr-only"></span>
 		</button>
         <h2 class="text-center">Log in</h2>
-        <form class="ng-pristine ng-invalid ng-invalid-required ng-valid-email ng-valid-compare-to" method="post" ng-submit="" name="signupForm" action="/login/">{% csrf_token %}
+        <form class="ng-pristine ng-invalid ng-invalid-required ng-valid-email ng-valid-compare-to" method="post" ng-submit="" name="signupForm">{% csrf_token %}
           <div class="form-group has-feedback" ng-class="">
             <input style="" class="form-control input-lg ng-pristine ng-valid-email ng-invalid ng-invalid-required ng-touched" id="email" name="email" ng-model="user.email" placeholder="Email" required="" type="email"/>
             <span class="ion-at form-control-feedback"></span>
@@ -17,7 +17,7 @@
             <span class="ion-key form-control-feedback"></span>
             <!-- ngIf: signupForm.password.$dirty -->
           </div>
-		  <button disabled="disabled" type="submit" ng-disabled="signupForm.$invalid" class="btn btn-lg btn-block btn-success">Log in</button>
+		  <button disabled="disabled" type="submit" ng-disabled="signupForm.$invalid" class="btn btn-lg btn-block btn-success" ng-click="login()">Log in</button>
 		  <br/>
 		  <p class="text-center text-muted">
             <small>Don't have an account yet? <a href="/#/signup">Sign up</a></small>
