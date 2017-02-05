@@ -5,7 +5,7 @@ from hello.models import Person,Article
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = Person
-        fields = ('id','name', 'email', 'password')
+        fields = ('id', 'email', 'password')
 
 
 class ArticleSerializer(serializers.ModelSerializer):

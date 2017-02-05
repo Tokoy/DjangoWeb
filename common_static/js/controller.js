@@ -82,10 +82,10 @@ app.controller('myCtrl',function($scope,$http) {
         $http({
         url:'/login/',
         method:'GET',
-        Params:datas,
+        params:datas,
         dataType:'json'
-        }).success(function(response){
-            alert(response)
+        }).success(function(result){
+            alert(result)
 		}).error(function(response){
 		    alert(response)
 		})

@@ -51,7 +51,7 @@ body{
 
 .main-footer {
   background: #202020;
-  padding: 35px 0 0;
+  height: 165px;
   color: #959595;
 }
 
@@ -173,4 +173,14 @@ body{
 }
 .panel-default > .panel-heading {
     background-color: #fff;
+}
+.main-footer ul {
+    float: left;
+    display: block;
+    margin-right: 2.3576515979%;
+    width: 23.2317613015%;
+}
+.footer-links{
+    margin-left: 25.5894128995%;
+    margin-bottom: 1.5em;
 }

@@ -24,17 +24,17 @@ def index(request, format=None):
 def User_list(request, format=None):
     if request.method == "GET":
         Email = request.GET['email']
-        # Password = request.GET['password']
+        Password = request.GET['password']
         # data = JSONParser().parse(request)
-        # findUser=Person.objects.get(email=Email,password=Password)
-        # serializer = UserSerializer(data, many=True)
-        return Response(Email)
+        findUser=Person.objects.get(email=Email,password=Password)
+        serializer = UserSerializer(findUser)
+        return request
     elif request.method == "POST":
         data = JSONParser().parse(request)
         serializer = UserSerializer(data=data)
         if serializer.is_valid():
             serializer.save()
-    return render(request, 'index.html')
+    # return render(request, 'index.html')
 
 
 
