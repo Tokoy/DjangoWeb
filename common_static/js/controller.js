@@ -32,7 +32,7 @@ app.config(function($routeProvider,$locationProvider,$interpolateProvider,$httpP
 });
 // create the controller and inject Angular's $scope
 app.controller('myCtrl',function($scope,$http) {
-	$scope.visible = false;
+	$scope.visible = true;
 	$scope.toggle = function(){
 		$scope.visible = !$scope.visible;
 	}
@@ -73,7 +73,9 @@ app.controller('myCtrl',function($scope,$http) {
 		    alert(response)
 		})
     };
-
+	$scope.show=function () {
+		$scope.visible = !$scope.visible;
+	}
     $scope.login=function(){
         var datas={
                     'password':$scope.user.password,
@@ -84,10 +86,10 @@ app.controller('myCtrl',function($scope,$http) {
         method:'GET',
         params:datas,
         dataType:'json'
-        }).success(function(result){
-            alert(result)
+        }).success(function(response){
+			$scope.visible = !$scope.visible;
 		}).error(function(response){
-		    alert(response)
+		    alert('User not exist')
 		})
     };
 
@@ -128,4 +130,13 @@ $(function() {
 			$('html, body').animate({scrollTop : 0},1000);
 			return false;
 		});
+		$(".icon").mouseenter(function(){
+			$(".icon").css("box-shadow","0 0 5px 8px rgba(51, 104, 183, 0.63)");
+			$(".icon").css("padding","0px");
+		});
+		$(".icon").mouseleave(function(){
+			$(".icon").css("box-shadow","");
+			$(".icon").css("padding","2px");
+		});
 	});
+

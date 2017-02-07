@@ -27,8 +27,9 @@ def User_list(request, format=None):
         Password = request.GET['password']
         # data = JSONParser().parse(request)
         findUser=Person.objects.get(email=Email,password=Password)
-        serializer = UserSerializer(findUser)
-        return request
+        # serializer = UserSerializer(findUser)
+        if findUser is not None:
+            return HttpResponse(findUser)
     elif request.method == "POST":
         data = JSONParser().parse(request)
         serializer = UserSerializer(data=data)
