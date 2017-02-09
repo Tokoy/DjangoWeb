@@ -11,7 +11,7 @@ class UserSerializer(serializers.ModelSerializer):
 class ArticleSerializer(serializers.ModelSerializer):
     class Meta:
         model = Article
-        fields = ('title', 'content', 'name')
+        fields = ('id','title', 'content', 'name')
 
 # ViewSets define the view behavior.
 class ArticleViewSet(viewsets.ModelViewSet):
