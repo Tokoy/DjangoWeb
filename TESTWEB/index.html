@@ -43,7 +43,7 @@
                       <li ng-show="!visible"><img width="40" height="40" class="img-circle img-responsive icon" src="/static/img/user1.jpg" alt="头像" /></li>
 					  <li ng-show="visible"><a  class="login" type="button" ng-click="">login</a></li>
 					  <li ng-show="visible"><a  class="register" type="button" ng-click="">register</a></li>
-					</ul>icon
+					</ul>
 					</ul>
 				</div>
 			</div>
@@ -55,6 +55,7 @@
 		<div class="raw">
 			<div class="main-content col-md-8">
 				<div class="post" ng-repeat="data in reddit.items">
+<<<<<<< Updated upstream
                     <header class="post-head">
                         <h3 class="post-title">{$data.title$}</h3>
                         <section class="post-meta">
@@ -83,6 +84,12 @@
                             </div>
                         </div>
                     </footer>
+=======
+					<h3 class="post-header" ng-href='{{item.url}}' target='_blank'>{$data.title$}</h3>
+                    <img src="http://img3.178.com/acg1/201702/281570480676/281570872218.jpg" style="height: 300px;">
+					<div class="post-content">{$data.score$}</div>
+					<div class="post-footer">{$data.author$}</div>
+>>>>>>> Stashed changes
 				</div>
 			</div>
             <div ng-show='reddit.busy'>Loading data...</div>
@@ -106,11 +113,19 @@
 				</div>
 
 				<div class="widget">
+<<<<<<< Updated upstream
 					<h4 class="title">NEWS</h4>
 					<a href="#" class="btn btn-default btn-block" target="_blank">动漫</a>
 					<a href="#" class="btn btn-default btn-block" target="_blank">电影</a>
 					<a href="#" class="btn btn-default btn-block" target="_blank">音乐</a>
 					<a href="#" class="btn btn-default btn-block" target="_blank">日剧</a>
+=======
+					<h4 class="title">News</h4>
+					<a href="#" class="btn btn-default btn-block" target="_blank">动漫</a>
+					<a href="#" class="btn btn-default btn-block" target="_blank">电影</a>
+					<a href="#" class="btn btn-default btn-block" target="_blank">音乐</a>
+					<a href="#" class="btn btn-default btn-block" target="_blank">技术</a>
+>>>>>>> Stashed changes
 					<a href="#" class="btn btn-default btn-block" target="_blank">文章</a>
 				</div>
                 <!-- end widget -->
