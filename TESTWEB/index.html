@@ -55,9 +55,34 @@
 		<div class="raw">
 			<div class="main-content col-md-8">
 				<div class="post" ng-repeat="data in reddit.items">
-					<h3 class="post-header" ng-href='{{item.url}}' target='_blank'>{$data.title$}</h3>
-					<div class="post-content">{$data.score$}</div>
-					<div class="post-footer">{$data.author$}</div>
+                    <header class="post-head">
+                        <h3 class="post-title">{$data.title$}</h3>
+                        <section class="post-meta">
+                            <span class="author">作者：<a href="">{$data.author$}</a></span> •
+                            <time class="post-date" datetime="" title="">{$data.datetime$}</time>
+                        </section>
+                    </header>
+                    <section class="featured-media">
+                        <img src="" alt="">
+                    </section>
+                    <section class="post-content">
+                            <p>{$data.content$}</p>
+                    </section>
+					<footer class="post-footer clearfix">
+                        <div class="pull-left tag-list">
+                            <i class="fa fa-folder-open-o"></i>
+                        </div>
+                        <div class="pull-right share">
+                            <div class="bdsharebuttonbox share-icons">
+                                <a href="#" class="bds_more" data-cmd="more"></a>
+                                <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+                                <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+                                <a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a>
+                                <a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a>
+                                <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+                            </div>
+                        </div>
+                    </footer>
 				</div>
 			</div>
             <div ng-show='reddit.busy'>Loading data...</div>
@@ -81,12 +106,12 @@
 				</div>
 
 				<div class="widget">
-					<h4 class="title">文档</h4>
-					<a href="#" class="btn btn-default btn-block" target="_blank">中文文档</a>
-					<a href="#" class="btn btn-default btn-block" target="_blank">文档1</a>
-					<a href="#" class="btn btn-default btn-block" target="_blank">文档2</a>
-					<a href="#" class="btn btn-default btn-block" target="_blank">文档3</a>
-					<a href="#" class="btn btn-default btn-block" target="_blank">文档4</a>
+					<h4 class="title">NEWS</h4>
+					<a href="#" class="btn btn-default btn-block" target="_blank">动漫</a>
+					<a href="#" class="btn btn-default btn-block" target="_blank">电影</a>
+					<a href="#" class="btn btn-default btn-block" target="_blank">音乐</a>
+					<a href="#" class="btn btn-default btn-block" target="_blank">日剧</a>
+					<a href="#" class="btn btn-default btn-block" target="_blank">文章</a>
 				</div>
                 <!-- end widget -->
 
