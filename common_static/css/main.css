@@ -9,11 +9,11 @@
 }
 
 body{
-	background-color:#f2f2f2;
+	background-color:#e5f1ff;
 	line-height:1.75em;
 	font-family:"Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", "Hiragino Sans GB W3", "WenQuanYi Micro Hei", "Microsoft YaHei UI", "Microsoft YaHei", sans-serif;
 	padding-top: 70px;
-	background:url('./bg.jpg') repeat center center fixed;
+	/*background:url('./bg.jpg') repeat center center fixed;*/
 }
 
 #right{
@@ -40,9 +40,6 @@ body{
 .post-header{
 	padding:15px;
 	border-bottom:1px solid #e5e5e5;
-}
-.post-footer{
-	float:right;
 }
 /* post */
 /*====================================================
@@ -515,6 +512,7 @@ body{
 .panel-default > .panel-heading {
     background-color: #fff;
 }
+
 .main-footer ul {
     float: left;
     display: block;

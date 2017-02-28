@@ -53,13 +53,11 @@
 	<section class="content-wrap">
 	<div class="container" >
 		<div class="raw">
-			<div class="main-content col-md-8">
+			<div class="main-content center-block" style="width: 900px">
 				<div class="post" ng-repeat="data in reddit.items">
-<<<<<<< Updated upstream
                     <header class="post-head">
                         <h3 class="post-title">{$data.title$}</h3>
                         <section class="post-meta">
-                            <span class="author">作者：<a href="">{$data.author$}</a></span> •
                             <time class="post-date" datetime="" title="">{$data.datetime$}</time>
                         </section>
                     </header>
@@ -70,8 +68,11 @@
                             <p>{$data.content$}</p>
                     </section>
 					<footer class="post-footer clearfix">
-                        <div class="pull-left tag-list">
-                            <i class="fa fa-folder-open-o"></i>
+                        <div class="tag-list">
+                            <span class="pull-left author">作者：<a href="">{$data.author$}</a></span>
+                            <span class="pull-left author">{$data.datetime$}</span>
+                            <a href="#" class="btn btn-default pull-right" target="_blank">动漫</a>
+                            <a href="#" class="btn btn-default pull-right" target="_blank">新闻</a>
                         </div>
                         <div class="pull-right share">
                             <div class="bdsharebuttonbox share-icons">
@@ -84,88 +85,9 @@
                             </div>
                         </div>
                     </footer>
-=======
-					<h3 class="post-header" ng-href='{{item.url}}' target='_blank'>{$data.title$}</h3>
-                    <img src="http://img3.178.com/acg1/201702/281570480676/281570872218.jpg" style="height: 300px;">
-					<div class="post-content">{$data.score$}</div>
-					<div class="post-footer">{$data.author$}</div>
->>>>>>> Stashed changes
 				</div>
 			</div>
             <div ng-show='reddit.busy'>Loading data...</div>
-			<div class="sidebar col-md-4">
-				<!-- start tag cloud widget -->
-				<div class="widget">
-					<h4 class="title">社区</h4>
-					<div class="content community">
-						<p>QQ：2303870038</p>
-						<p><a href="#" title="中文社区" target="_blank" onclick=""><i class="fa fa-comments"></i>Community</a></p>
-					</div>
-				</div>
-				<!-- end tag cloud widget -->	
-
-				<!-- start widget -->
-				<div class="widget">
-					<h4 class="title">下载</h4>
-					<div class="content download">
-						<a href="#" class="btn btn-default btn-block" ng-click="toggle()">Download</a>
-					</div>
-				</div>
-
-				<div class="widget">
-<<<<<<< Updated upstream
-					<h4 class="title">NEWS</h4>
-					<a href="#" class="btn btn-default btn-block" target="_blank">动漫</a>
-					<a href="#" class="btn btn-default btn-block" target="_blank">电影</a>
-					<a href="#" class="btn btn-default btn-block" target="_blank">音乐</a>
-					<a href="#" class="btn btn-default btn-block" target="_blank">日剧</a>
-=======
-					<h4 class="title">News</h4>
-					<a href="#" class="btn btn-default btn-block" target="_blank">动漫</a>
-					<a href="#" class="btn btn-default btn-block" target="_blank">电影</a>
-					<a href="#" class="btn btn-default btn-block" target="_blank">音乐</a>
-					<a href="#" class="btn btn-default btn-block" target="_blank">技术</a>
->>>>>>> Stashed changes
-					<a href="#" class="btn btn-default btn-block" target="_blank">文章</a>
-				</div>
-                <!-- end widget -->
-
-				<!-- start tag cloud widget -->
-				<div class="widget">
-					<h4 class="title">标签云</h4>
-					<div class="content tag-cloud">
-						<a href="#">标签</a>
-						<a href="#">标签1</a>
-						<a href="#">标签2</a>
-						<a href="#">标签2</a>
-						<a href="#">标签3</a>
-						<a href="#">标签4</a>
-						<a href="#">标签5</a>
-						<a href="#">标签6</a>
-						<a href="#">标签7</a>
-						<a href="#">标签8</a>
-						<a href="#">标签9</a>
-						<a href="#">标签10</a>
-						<a href="#">标签11</a>
-						<a href="#">错误页</a>
-						<a href="#">标签12</a>
-						<a href="#">标签13</a>
-						<a href="#">标签14</a>
-						<a href="#">标签15</a>
-						<a href="">...</a>
-					</div>
-				</div>
-				<!-- end tag cloud widget -->	
-				<uib-accordion close-others="oneAtATime">
-					<div uib-accordion-group class="panel-default" is-open="status.open">
-					  <uib-accordion-heading>
-						Read Me! <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
-					  </uib-accordion-heading>
-					  This is just some content to illustrate fancy headings.
-					</div>
-				 </uib-accordion>
-
-			</div>
 		</div>
 	</div>
 	</section>
