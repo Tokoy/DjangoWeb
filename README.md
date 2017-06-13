@@ -1,7 +1,7 @@
 # DjangoWeb
 Use Angularjs-Django
 PreView：
-![img_url](https://github.com/Tokoy/DjangoWeb/tree/master/common_static/img/PreView.png)
+![网站预览](https://github.com/Tokoy/DjangoWeb/tree/master/common_static/img/PreView.png)
 
 以该项目为例子简单介绍下，该网站用Python的Django和angularjs 外加bootstarp生成的
 Django：用来作为后台管理（数据的存储和调用，管理之类的）
