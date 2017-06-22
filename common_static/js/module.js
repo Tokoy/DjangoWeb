@@ -16,7 +16,7 @@ app.factory('MyModel', ['$resource', function($resource) {
 //     if (this.busy) return;
 //     this.busy = true;
 //
-//     $http.get("/context/").success(function(data){
+//     $http.get("/news/").success(function(data){
 //       this.items = data;
 //       this.after = "t3_" + this.items[this.items.length - 1].id;
 //       this.busy = false;
@@ -24,6 +24,7 @@ app.factory('MyModel', ['$resource', function($resource) {
 //   };
 //   return Reddit;
 // });
+
 app.factory('Reddit', function($http) {
   var Reddit = function() {
     this.items = [];
